@@ -30,7 +30,7 @@ Vare Written in NodeJS, bypassing all anti viruses during runtime and scantime, 
 
 
 ## Features
-```go
+```batch
 ┌──(Saint@root)-[~/]
 └─$ cat VareStuffs
 
