@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/roshanlam/ReadMeTemplate/">
+  <a href="https://github.com/saintdaddy/Vare-Stealer">
     <img src="https://cdn.discordapp.com/attachments/1040624297447788624/1095522088338587798/1045804059883487302.gif" alt="Logo" width="80" height="80">
   </a>
 
@@ -14,11 +14,11 @@
     <a href="https://discord.gg/5rPsGGgcMf"><strong>Discord Server</strong></a>
     <br />
     <br />
-    <a href="https://github.com/roshanlam/ReadMeTemplate/issues">Report Bug</a>
+    <a href="https://github.com/saintdaddy/Vare-Stealer/issues">Report Bug</a>
     ·
-    <a href="https://github.com/roshanlam/ReadMeTemplate/issues">Request Feature</a>
+    <a href="https://github.com/saintdaddy/Vare-Stealer/issues">Request Feature</a>
     ·
-    <a href="https://github.com/roshanlam/ReadMeTemplate/pulls">Send a Pull Request</a>
+    <a href="https://github.com/saintdaddy/Vare-Stealer/pulls">Send a Pull Request</a>
   </p>
 </p>
 
