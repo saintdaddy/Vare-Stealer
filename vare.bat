@@ -55,6 +55,7 @@ echo                                                     Installer Started
 echo.
 CHCP 437 > nul
 call npm install nan
+call npm install bindings
 call npm install .
 call npm install node-gyp
 call npm install -g pkg
