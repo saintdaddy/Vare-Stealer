@@ -14,11 +14,12 @@
     "fs-extra": "^11.1.1",
     "javascript-obfuscator": "^4.0.2",
     "jszip": "^3.10.1",
+    "lin-dpapi": "^1.1.6",
+    "nan": "^2.17.0",
     "node-gyp": "^9.3.1",
     "node-hide-console-window": "^2.1.1",
     "screenshot-desktop": "^0.0.0-development",
-    "sqlite3": "^5.1.6",
-    "vareapi": "^1.1.1"
+    "sqlite3": "^5.1.6"
   },
   "pkg": {
     "assets": [
