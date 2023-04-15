@@ -76,6 +76,15 @@ Vare Written in NodeJS, bypassing all anti viruses during runtime and scantime, 
 | Roblox Name
 | Roblox Premium Status
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+@InstagramStuffs
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+| Username
+| Follower Count
+| Follows Count
+| Mail
+| Phone Number
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ```
 
 
@@ -113,6 +122,8 @@ If you want to support me and my project, you can do the following, **thank you*
 <img src="https://user-images.githubusercontent.com/111476645/231453472-9fef9e90-24f9-441e-9da0-9516411c3b8d.png" width="500">
 
 <img src="https://user-images.githubusercontent.com/111476645/231453485-e9204edf-5979-4730-88f8-f880e00b6d30.png" width="500">
+
+<img src="https://user-images.githubusercontent.com/111476645/232208596-2ab1d4d3-1a12-43a2-8aaf-dccd0edf3347.png" width="500">
 
 
 <!-- CONTACT -->
