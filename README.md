@@ -2,8 +2,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+  <kbd>
   <a href="https://github.com/saintdaddy/Vare-Stealer">
-    <img src="https://cdn.discordapp.com/attachments/1040624297447788624/1095522088338587798/1045804059883487302.gif" alt="Logo" width="80" height="80">
+    <img src="https://media.discordapp.net/attachments/1096469835489235079/1096626377035370627/Comp_1_00001sss.png?width=558&height=558" alt="Logo" width="250" height="250">
+    </kbd>
   </a>
 
   <h3 align="center">Vare Stealer</h3>
