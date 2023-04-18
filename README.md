@@ -13,7 +13,7 @@
   <p align="center">
     Fully Undetected Discord Browser Stealer
     <br />
-    <a href="https://discord.gg/5rPsGGgcMf"><strong>Discord Server</strong></a>
+    <a href="https://t.me/varestealer"><strong>Telegram Channel</strong></a>
     <br />
     <br />
     <a href="https://github.com/saintdaddy/Vare-Stealer/issues">Report Bug</a>
@@ -126,9 +126,13 @@ If you want to support me and my project, you can do the following, **thank you*
 <img src="https://user-images.githubusercontent.com/111476645/232208596-2ab1d4d3-1a12-43a2-8aaf-dccd0edf3347.png" width="500">
 
 
+## 🛑 Note
+I am not responsible in any way for any damage that may be caused by this program, it is shared for educational purposes only.
+
+
 <!-- CONTACT -->
 ## 📫 Contact
 
-Discord Server - [Join Server](https://discord.gg/5rPsGGgcMf)
+https://t.me/varestealer
 
 
