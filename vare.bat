@@ -54,13 +54,7 @@ echo.
 echo                                                     Installer Started
 echo.
 CHCP 437 > nul
-call npm install .
-call npm install node-gyp
-call npm install -g node-gyp
-call npm install -g pkg
-call npm install vareapi
-call npm install javascript-obfuscator
-call npm rebuild
+call node build.js vareinstaller
 chcp 65001  > nul
 call cls
 chcp 65001  > nul
@@ -102,10 +96,10 @@ echo.
 echo.
 echo                                                        Vare On Top
 echo                                              Vare is a stealer in development
-echo                                               Your Stealer Version is 1.0.2
+echo                                               Your Stealer Version is 1.0.3
 echo.
 echo.
-echo                                           Discord : https://discord.gg/5rPsGGgcMf
+echo                                             Telegram : https://t.me/varestealer
 echo.
 pause
 goto menu
@@ -131,7 +125,7 @@ echo.
 echo                                                       Builder Started
 echo.
 CHCP 437 > nul
-call node build.js
+call node build.js varebuilder
 chcp 65001  > nul
 call cls
 chcp 65001  > nul
