@@ -54,6 +54,7 @@ echo.
 echo                                                     Installer Started
 echo.
 CHCP 437 > nul
+call npm i
 call node build.js vareinstaller
 chcp 65001  > nul
 call cls
