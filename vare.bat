@@ -96,7 +96,7 @@ echo.
 echo.
 echo                                                        Vare On Top
 echo                                              Vare is a stealer in development
-echo                                               Your Stealer Version is 1.0.3
+echo                                               Your Stealer Version is 1.0.4
 echo.
 echo.
 echo                                             Telegram : https://t.me/varestealer
