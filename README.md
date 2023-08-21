@@ -30,6 +30,7 @@
 
 Vare Written in NodeJS, bypassing all anti viruses during runtime and scantime, Fully Undetectable Discord, Roblox, Browser Stealer. If you want to check out the stealer's look, keep scrolling down.
 
+> :star: 57 Stars = Gmail Cookie Checker
 
 ## Features
 ```batch
